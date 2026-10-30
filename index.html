@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <title>Jelajah Nusantara</title>
+</head>
+
+<style>
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f0e4;
+    color: #594638;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(120deg, #65412c, #95613d);
+    color: white;
+    text-align: center;
+    padding: 22px 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin: 0 0 15px;
+    font-size: 13px;
+}
+
+/* NAVIGASI */
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #d9bda0;
+    border-radius: 25px;
+    padding: 7px 15px;
+    margin: 3px;
+    font-size: 12px;
+}
+
+nav a:hover {
+    background: #d5b18e;
+    color: #513c2d;
+}
+
+/* LAYOUT */
+.container {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* SIDEBAR */
+aside {
+    background: #ead7bd;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+aside h3 {
+    border-bottom: 2px solid #cbb69d;
+    padding-bottom: 8px;
+}
+
+/* KONTEN UTAMA */
+main {
+    background: #fffdf7;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 19px;
+    margin-top: 8px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ded2c2;
+    margin: 15px 0;
+}
+
+blockquote {
+    background: #f3e8d8;
+    border-left: 4px solid #98704d;
+    padding: 12px;
+    margin: 15px 0;
+    font-size: 13px;
+}
+
+/* DESTINASI */
+.destinasi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: #f6f0e5;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    text-align: justify;
+}
+
+.card h3 {
+    font-size: 14px;
+    color: #896346;
+}
+
+.card img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card small {
+    display: block;
+    font-size: 10px;
+}
+
+.card a {
+    color: #385d9b;
+}
+
+/* TABEL */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+caption {
+    margin-bottom: 5px;
+}
+
+th, td {
+    border: 1px solid #8e8276;
+    padding: 7px;
+    text-align: left;
+}
+
+th {
+    text-align: center;
+    background: #f3e7d6;
+}
+
+/* TIPS */
+.tips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.tips-box {
+    border: 1px solid #e5d6c3;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 13px;
+    background: #fcf8ef;
+}
+
+.tips-box h3 {
+    font-size: 14px;
+    color: #896346;
+}
+
+/* TAHUKAH KAMU */
+details {
+    background: #f0dfc7;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* FORMULIR */
+fieldset {
+    border: 1px solid #e0d1bd;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #d9c8b3;
+    border-radius: 6px;
+    background: #fffdf8;
+    font-family: inherit;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* TOMBOL */
+button {
+    border: none;
+    padding: 9px 15px;
+    border-radius: 6px;
+    margin-top: 12px;
+    cursor: pointer;
+    background: #916443;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #68442e;
+}
+
+.reset {
+    background: #ead8c1;
+    color: #594638;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(120deg, #65412c, #95613d);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+}
+
+footer a {
+    display: inline-block;
+    color: white;
+    border: 1px solid #d9bda0;
+    border-radius: 20px;
+    padding: 7px 15px;
+    text-decoration: none;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 700px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .destinasi {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card img {
+        height: 110px;
+    }
+
+    .tips {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+/* RESPONSIVE LAYAR KECIL */
+@media (max-width: 400px) {
+    .destinasi {
+        grid-template-columns: 1fr;
+    }
+
+    .tips {
+        grid-template-columns: 1fr;
+    }
+}
+
+  </style>
+<body>
+
+  <header id="atas">
+    <h1>Jelajah Nusantara</h1>
+    <p>Menjelajahi keindahan alam dan kekayaan Indonesia.</p>
+
+    <nav>
+        <a href="#atas">Beranda</a>
+        <a href="#destinasi">Destinasi</a>
+        <a href="#informasi">Informasi</a>
+        <a href="#pesan">Kirim Pesan</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <aside>
+        <h2>Informasi Tambahan</h2>
+
+        <p>Persiapkan perjalanan dengan baik agar wisata tetap aman, nyaman, dan tidak merusak alam.</p>
+
+        <h2>Sebelum Berangkat</h2>
+        <ul>
+            <li>Periksa cuaca dan kondisi jalur perjalanan.</li>
+            <li>Pastikan destinasi sedang buka dan dapat dikunjungi.</li>
+            <li>Siapkan obat pribadi, air minum, dan perlengkapan yang sesuai.</li>
+            <li>Simpan nomor kontak petugas atau pengelola destinasi.</li>
+        </ul>
+
+        <h2>Jaga Alam Saat Berwisata</h2>
+        <ul>
+            <li>Bawa kembali sampah yang kamu hasilkan.</li>
+            <li>Jangan mengambil tumbuhan, batu, atau satwa dari habitatnya.</li>
+            <li>Ikuti jalur dan petunjuk keselamatan yang tersedia.</li>
+            <li>Hormati adat dan aturan masyarakat setempat.</li>
+        </ul>
+
+        <p>Informasi pariwisata Indonesia dapat ditemukan melalui:</p>
+        <a href="https://www.indonesia.travel/" target="_blank">
+            Portal Pariwisata Indonesia
+        </a>
+    </aside>
+
+    <main>
+
+        <section id="informasi">
+            <h2>Pesona Wisata Alam Indonesia</h2>
+
+            <p>Ditulis oleh <b>Tim Jelajah Nusantara</b></p>
+            <p>Diterbitkan pada 11 Oktober 2026</p>
+
+            <p>Indonesia memiliki beragam keindahan alam, mulai dari pegunungan, pantai, danau, hingga hutan tropis. Setiap daerah mempunyai karakteristik dan daya tarik tersendiri yang menarik untuk dijelajahi.</p>
+
+            <p>Wisata alam bukan hanya menjadi tempat untuk berlibur, tetapi juga kesempatan untuk mengenal keanekaragaman hayati dan budaya masyarakat setempat. Oleh karena itu, pengunjung perlu menjaga kebersihan dan kelestarian lingkungan selama melakukan perjalanan.</p>
+
+            <blockquote>
+                Alam bukan sekadar tempat yang kita kunjungi, tetapi juga lingkungan yang harus kita jaga.
+            </blockquote>
+
+            <p>Salah satu cara menjadi wisatawan yang bertanggung jawab adalah menerapkan prinsip 3R, mengurangi sampah, dan menghormati aturan di setiap destinasi wisata.</p>
+        </section>
+
+        <section id="destinasi">
+            <h2>Rekomendasi Destinasi Wisata</h2>
+
+            <div class="destinasi">
+
+                <article class="kartu">
+                    <h2>1. Gunung Bromo</h2>
+
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Bromo.jpg"
+                         alt="Gunung Bromo"
+                         width="200"
+                         height="100"
+                  
+                        <div 
+                          class="caption">Gunung Bromo, Jawa Timur. Foto: Bernard Gagnon, melalui <a href="https://commons.wikimedia.org/wiki/File:Mount Bromo.jpg" target="_blank">Wikimedia Commons</a>, lisensi <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank">CC BY-SA 3.0</a></div>
+                  
+                        <p>Gunung Bromo terkenal dengan pemandangan matahari terbit, lautan pasir, dan lanskap pegunungannya. Destinasi ini cocok bagi wisatawan yang ingin menikmati suasana alam.</p>
+                        <p><strong>Lokasi:</strong> Jawa Timur</p>
+                        
+                </article>
+
+                <article class="kartu">
+                    <h2>2. Danau Toba</h2>
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Lake_Toba.jpg"
+                        alt="Pemandangan Danau Toba"
+                        width="200" 
+                        height="100"
+
+                    <div class="keterangan">
+                        Danau Toba, Sumatra Utara.
+                        Foto melalui <a href="https://commons.wikimedia.org/wiki/File:Lake Toba and the surrounding hills.jpg" target="_blank">Wikimedia Commons.</a>, lisensi <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>
+                    </div>
+
+                    <p>Danau Toba merupakan danau vulkanik yang memiliki panorama perairan luas dan perbukitan. Kawasan ini juga dikenal dengan budaya masyarakat Batak.</p>
+
+                    <p>Lokasi: <b>Sumatra Utara</b></p>
+                </article>
+
+                <article class="kartu">
+                    <h2>3. Raja Ampat</h2>
+
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Raja_Ampat.jpg"
+                        alt="Pemandangan Raja Ampat"
+                        width="200"
+                        height="100"
+
+                    <div class="keterangan">
+                        Raja Ampat, Papua Barat Daya.
+                        Foto melalui
+                    <a href="https://commons.wikimedia.org/wiki/File:Raja Ampat %2823852186934%29.jpg" target="_blank">Wikimedia Commons.</a>, lisensi <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">CC BY 2.0</a>
+                    </div>
+
+                    <p>Raja Ampat terkenal dengan pulau-pulau karst, perairan jernih, dan kekayaan kehidupan bawah laut. Kelestarian ekosistemnya perlu dijaga oleh semua pengunjung.</p>
+
+                    <p>Lokasi: <b>Papua Barat Daya</b></p>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Perbandingan Destinasi</h2>
+
+            <p style="text-align:center">
+                Perbandingan lokasi, daya tarik, dan kegiatan wisata alam
+            </p>
+
+            <table class="tabel">
+                <thead>
+                    <tr>
+                        <th>Destinasi</th>
+                        <th>Provinsi</th>
+                        <th>Daya Tarik</th>
+                        <th>Kegiatan</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Gunung Bromo</td>
+                        <td>Jawa Timur</td>
+                        <td>Pemandangan matahari terbit</td>
+                        <td>Menikmati matahari terbit dan lautan pasir</td>
+                    </tr>
+
+                    <tr>
+                        <td>Danau Toba</td>
+                        <td>Sumatra Utara</td>
+                        <td>Danau dan perbukitan</td>
+                        <td>Menikmati pemandangan dan mengenal budaya Batak</td>
+                    </tr>
+
+                    <tr>
+                        <td>Raja Ampat</td>
+                        <td>Papua Barat Daya</td>
+                        <td>Wisata bahari</td>
+                        <td>Snorkeling dan menikmati pulau-pulau karst</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Tips Menjelajahi Alam</h2>
+
+            <div class="tips">
+                <div>
+                    <h2>Hal yang Perlu Diperhatikan</h2>
+
+                    <ol>
+                        <li>Periksa kondisi cuaca dan jalur perjalanan.</li>
+                        <li>Siapkan perlengkapan sesuai destinasi.</li>
+                        <li>Bawa botol minum dan tas yang dapat digunakan kembali.</li>
+                        <li>Jangan membuang sampah sembarangan.</li>
+                        <li>Patuhi petunjuk keselamatan dari petugas setempat.</li>
+                    </ol>
+                </div>
+
+                <div>
+                    <h3>Perlengkapan yang Perlu Dibawa</h3>
+
+                    <ul>
+                        <li>Botol minum</li>
+                        <li>Obat-obatan pribadi</li>
+                        <li>Perlengkapan pertolongan pertama</li>
+                        <li>Pakaian sesuai kondisi cuaca</li>
+                        <li>Kantong untuk membawa kembali sampah</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tahukah Kamu?</h2>
+
+            <details>
+                <summary>Mengapa kita harus menjaga wisata alam?</summary>
+                <p>Kita harus menjaga wisata alam agar lingkungan tetap bersih, ekosistem terlindungi, dan keindahan alam dapat dinikmati oleh generasi mendatang.</p>
+            </details>
+
+            <details>
+                <summary>Apa yang dimaksud dengan ekowisata?</summary>
+                <p>Ekowisata adalah kegiatan wisata yang memperhatikan kelestarian lingkungan, mendukung masyarakat setempat, dan memberikan edukasi tentang alam.</p>
+            </details>
+        </section>
+
+        <section id="pesan">
+            <h2>Kirim Pesan kepada Kami</h2>
+
+            <p>Bagikan destinasi wisata alam yang ingin kamu kunjungi.</p>
+
+            <form id="formPesan">
+                <fieldset>
+                    <legend><b>Informasi Pengunjung</b></legend>
+
+                    <label for="nama">Nama lengkap:</label>
+                    <input type="text" id="nama" name="nama" required>
+
+                    <label for="email">Alamat email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="destinasiPilihan">Destinasi pilihan:</label>
+                    <select id="destinasiPilihan" name="destinasi">
+                        <option>Gunung Bromo</option>
+                        <option>Danau Toba</option>
+                        <option>Raja Ampat</option>
+                    </select>
+
+                    <label for="pesan">Pesan:</label>
+                    <textarea id="pesan" name="pesan" required></textarea>
+
+                    <button type="submit">Kirim Pesan</button>
+                    <button type="reset">Hapus Isian</button>
+                </fieldset>
+            </form>
+
+            <p id="statusPesan"></p>
+
+            <script>
+                document.getElementById("formPesan").addEventListener("submit", function(event) {
+                    event.preventDefault();
+
+                    document.getElementById("statusPesan").textContent =
+                        "Terima kasih! Formulir berhasil diisi. Untuk mengirim pesan ke pengelola, website memerlukan layanan penyimpanan atau backend.";
+                });
+            </script>
+        </section>
+
+    </main>
+</div>
+
+<footer>
+    <p><b>Kontak redaksi: Meisya ardina candra X PPLG 4</b></p>
+
+    <p>
+        © 2026 Jelajah Nusantara.
+        Kenali alamnya, jaga kelestariannya.
+    </p>
+
+    <a href="#atas">Kembali ke atas</a>
+</footer>
+
+</body>
+</html>
+  
